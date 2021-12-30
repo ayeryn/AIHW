@@ -83,7 +83,13 @@ def extractCharacterFeatures(n):
     '''
     def extract(x):
         # BEGIN_YOUR_CODE (our solution is 6 lines of code, but don't worry if you deviate from this)
-        raise Exception("Not implemented yet")
+        d = collections.defaultdict(int)
+        x = x.replace(' ','')
+        for i in range(len(x)):
+            f = x[i:i+n]
+            if len(f) == n:
+                d[f] += 1
+        return d
         # END_YOUR_CODE
     return extract
 
