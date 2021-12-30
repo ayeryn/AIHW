@@ -65,7 +65,8 @@ def generateDataset(numExamples, weights):
     # y should be 1 or -1 as classified by the weight vector.
     def generateExample():
         # BEGIN_YOUR_CODE (our solution is 2 lines of code, but don't worry if you deviate from this)
-        raise Exception("Not implemented yet")
+        phi = {x:random.random()+3 for x in weights}
+        y = math.copysign(1, dotProduct(phi,weights))
         # END_YOUR_CODE
         return (phi, y)
     return [generateExample() for _ in range(numExamples)]
